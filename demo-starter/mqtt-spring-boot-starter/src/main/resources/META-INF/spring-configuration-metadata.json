@@ -1,0 +1,54 @@
+{
+  "groups": [],
+  "properties": [
+    {
+      "name": "wisechat.mq.mqtt.clientId",
+      "type": "java.lang.String",
+      "description": "MQTT client ID.",
+      "defaultValue": "https://open.feishu.cn/open-apis",
+      "sourceType": "chat.wise.message.feishu.FeishuProperties"
+    },
+    {
+      "name": "wisechat.mq.mqtt.broker",
+      "type": "java.lang.String",
+      "description": "MQTT broker address.",
+      "sourceType": "chat.wise.message.feishu.FeishuProperties"
+    },
+    {
+      "name": "wisechat.mq.mqtt.username",
+      "type": "java.lang.String",
+      "description": "MQTT broker username.",
+      "sourceType": "chat.wise.message.feishu.FeishuProperties"
+    },
+    {
+      "name": "wisechat.mq.mqtt.password",
+      "type": "java.lang.String",
+      "description": "MQTT broker password.",
+      "sourceType": "chat.wise.message.feishu.FeishuProperties"
+    },
+    {
+      "name": "wisechat.mq.mqtt.keepAliveInterval",
+      "type": "java.lang.String",
+      "description": "Feishu App Secret.",
+      "sourceType": "chat.wise.message.feishu.FeishuProperties"
+    },
+    {
+      "name": "wisechat.mq.mqtt.connectionTimeout",
+      "type": "java.lang.String",
+      "description": "Feishu App Secret.",
+      "sourceType": "chat.wise.message.feishu.FeishuProperties"
+    },
+    {
+      "name": "wisechat.mq.mqtt.consumer.topics",
+      "type": "java.lang.String",
+      "description": "MQTT consumer listener topics.",
+      "sourceType": "chat.wise.message.feishu.FeishuProperties"
+    },
+    {
+      "name": "wisechat.mq.mqtt.producer.topic",
+      "type": "java.lang.String",
+      "description": "MQTT producer default topic.",
+      "sourceType": "chat.wise.message.feishu.FeishuProperties"
+    }
+  ]
+}

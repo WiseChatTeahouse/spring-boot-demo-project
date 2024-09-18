@@ -1,0 +1,15 @@
+server:
+  port: 3690
+spring:
+  application:
+    name: consumer-server
+wisechat:
+  notice:
+  mq:
+    mqtt:
+      clientId: ${spring.application.name}:${random.uuid}
+      broker: tcp://192.188.188.10:1883
+      keepAliveInterval: 60
+      connectionTimeout: 10
+      consumer:
+        topics: mqtt/topic01,mqtt/topic02

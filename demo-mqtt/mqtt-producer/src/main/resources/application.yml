@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: producer-server
+wisechat:
+  mq:
+    mqtt:
+      clientId: ${spring.application.name}:${random.value}
+      broker: tcp://192.188.188.10:1883
+      keepAliveInterval: 60
+      connectionTimeout: 10
+      producer:
+        topic: mqtt/topic01
+        qos: 1
+        retained: false
