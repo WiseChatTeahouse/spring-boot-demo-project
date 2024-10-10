@@ -20,6 +20,7 @@
         <module>demo-mqtt</module>
         <module>demo-websocket</module>
         <module>demo-starter</module>
+        <module>demo-eureka-server</module>
     </modules>
 
     <properties>

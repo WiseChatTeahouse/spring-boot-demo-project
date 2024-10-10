@@ -1,0 +1,14 @@
+# 应用名称
+spring:
+  application:
+    name: eureka-server
+server:
+  port: 8761 #默认8761
+eureka:
+  instance:
+    hostname: eureka-server  #主机名
+  server:
+    enable-self-preservation: false #开发期间禁用保护模式
+  client:
+    register-with-eureka: false #单台服务器不向自己注册
+    fetch-registry: false #单台服务器不从自己拉取
