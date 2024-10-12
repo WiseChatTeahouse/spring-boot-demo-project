@@ -21,6 +21,7 @@
         <module>demo-websocket</module>
         <module>demo-starter</module>
         <module>demo-eureka-server</module>
+        <module>demo-log-traceId</module>
     </modules>
 
     <properties>

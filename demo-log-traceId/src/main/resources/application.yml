@@ -1,0 +1,5 @@
+server:
+  port: 3690
+spring:
+  application:
+    name: log-collection-boot
