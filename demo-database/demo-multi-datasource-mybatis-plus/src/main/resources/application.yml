@@ -1,0 +1,44 @@
+server:
+  port: 3690
+
+mybatis-plus:
+  global-config:
+    banner: true
+
+wisechat:
+  mybatis-plus:
+    datasource:
+      data-warehouse-datasource:
+        hikari:
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          jdbc-url: jdbc:mysql://47.106.182.50:3306/project_dev?useSSL=false&useUnicode=true&zeroDateTimeBehavior=convertToNull&characterEncoding=UTF8&serverTimezone=Asia/Shanghai
+          password: user123456
+          username: user_dev
+          pool-name: Order-HikariPool
+          # 等待连接时间(毫秒)
+          connection-timeout: 10000
+          validation-timeout: 3000
+          # 连接保持空闲状态的最长时间(毫秒)
+          idle-timeout: 300000
+          login-timeout: 5
+          max-lifetime: 360000
+          maximum-pool-size: 6
+          minimum-idle: 3
+          read-only: false
+      data-center-datasource:
+        hikari:
+          driver-class-name: org.postgresql.Driver
+          jdbc-url: jdbc:postgresql://159.75.147.102:15433/postgres
+          password: wisechat@135
+          username: root
+          pool-name: Datacenter-HikariPool
+          # 等待连接时间(毫秒)
+          connection-timeout: 10000
+          validation-timeout: 3000
+          # 连接保持空闲状态的最长时间(毫秒)
+          idle-timeout: 300000
+          login-timeout: 5
+          max-lifetime: 360000
+          maximum-pool-size: 6
+          minimum-idle: 3
+          read-only: false
