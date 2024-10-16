@@ -22,6 +22,7 @@
         <module>demo-starter</module>
         <module>demo-eureka-server</module>
         <module>demo-log-traceId</module>
+        <module>demo-database</module>
     </modules>
 
     <properties>

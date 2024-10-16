@@ -1,0 +1,24 @@
+server:
+  port: 3690
+
+spring:
+  datasource:
+    username: root
+    password: speed@369^charge_dev
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.188.188:3306/speed_charge?useSSL=false&useUnicode=true&zeroDateTimeBehavior=convertToNull&characterEncoding=UTF8&serverTimezone=Asia/Shanghai
+    hikari:
+      # 等待连接时间(毫秒)
+      connection-timeout: 10000
+      validation-timeout: 3000
+      # 连接保持空闲状态的最长时间(毫秒)
+      idle-timeout: 300000
+      login-timeout: 5
+      max-lifetime: 360000
+      maximum-pool-size: 6
+      minimum-idle: 3
+      read-only: false
+# sql日志
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
