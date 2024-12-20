@@ -15,6 +15,7 @@
         <module>demo-postgresql</module>
         <module>demo-mysql</module>
         <module>demo-multi-datasource-mybatis-plus</module>
+        <module>demo-redis</module>
     </modules>
 
     <properties>

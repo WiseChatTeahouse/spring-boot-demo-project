@@ -1,0 +1,6 @@
+spring:
+  redis:
+    host: 106.55.255.45
+    port: 36379
+    password: wisechat@135
+    database: 1
