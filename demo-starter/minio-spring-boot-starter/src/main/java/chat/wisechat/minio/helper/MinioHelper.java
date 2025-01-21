@@ -9,6 +9,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.InvalidKeyException;
@@ -40,6 +42,16 @@ public class MinioHelper {
             log.error("upload file: {} fail，file size：{} bytes", file.getOriginalFilename(), file.getSize(), e);
         } catch (IOException e) {
             log.error("IOException upload file: {} fail，file size：{} bytes", file.getOriginalFilename(), file.getSize(), e);
+        }
+    }
+
+    public void upload(File file) {
+        try (FileInputStream fileInputStream = new FileInputStream(file)) {
+            log.info("file local info {}", file);
+            minioClient.putObject(PutObjectArgs.builder().bucket(minioProperties.getBucket()).object(file.getName())
+                    .stream(fileInputStream, file.length(), -1).build());
+        } catch (Exception e) {
+            log.error("upload file fail，file size：{} bytes", file.length(), e);
         }
     }
 }

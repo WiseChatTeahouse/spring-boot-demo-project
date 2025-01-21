@@ -1,10 +1,7 @@
 package chat.wisechat.minio.controller;
 
 import chat.wisechat.minio.service.FileService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
@@ -28,6 +25,11 @@ public class FileController {
     @PostMapping("/upload")
     public void upload(@RequestBody MultipartFile file) {
         fileService.upload(file);
+    }
+
+    @GetMapping("/bondsInfo")
+    public void bondsInfo() {
+        fileService.upload();
     }
 
 }
