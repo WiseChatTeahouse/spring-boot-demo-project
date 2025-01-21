@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>mqtt-spring-boot-starter</module>
+        <module>minio-spring-boot-starter</module>
     </modules>
 
     <properties>

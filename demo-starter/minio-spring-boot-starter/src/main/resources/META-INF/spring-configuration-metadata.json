@@ -1,0 +1,30 @@
+{
+  "groups": [],
+  "properties": [
+    {
+      "name": "wisechat.file.minio.url",
+      "type": "java.lang.String",
+      "description": "Minio client endpoint.",
+      "defaultValue": "127.0.0.1:9000",
+      "sourceType": "chat.wisechat.minio.MinioProperties"
+    },
+    {
+      "name": "wisechat.file.minio.accessKey",
+      "type": "java.lang.String",
+      "description": "Minio client accessKey.",
+      "sourceType": "chat.wisechat.minio.MinioProperties"
+    },
+    {
+      "name": "wisechat.file.minio.secretKey",
+      "type": "java.lang.String",
+      "description": "Minio client secretKey.",
+      "sourceType": "chat.wisechat.minio.MinioProperties"
+    },
+    {
+      "name": "wisechat.file.minio.bucket",
+      "type": "java.lang.String",
+      "description": "Minio client bucket name.",
+      "sourceType": "chat.wisechat.minio.MinioProperties"
+    }
+  ]
+}
