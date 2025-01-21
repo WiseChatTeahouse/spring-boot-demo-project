@@ -2,6 +2,7 @@ package chat.wisechat.minio.helper;
 
 import chat.wisechat.minio.MinioProperties;
 import io.minio.MinioClient;
+import io.minio.ObjectWriteResponse;
 import io.minio.PutObjectArgs;
 import io.minio.errors.MinioException;
 import lombok.extern.slf4j.Slf4j;
@@ -50,6 +51,43 @@ public class MinioHelper {
             log.info("file local info {}", file);
             minioClient.putObject(PutObjectArgs.builder().bucket(minioProperties.getBucket()).object(file.getName())
                     .stream(fileInputStream, file.length(), -1).build());
+        } catch (Exception e) {
+            log.error("upload file fail，file size：{} bytes", file.length(), e);
+        }
+    }
+
+    /**
+     * 指定contentType类型的文件上传
+     *
+     * @param file        文件
+     * @param contentType 类型
+     */
+    public void upload(File file, String contentType) {
+        try (FileInputStream fileInputStream = new FileInputStream(file)) {
+            log.info("file local info {}", file);
+            ObjectWriteResponse objectWriteResponse = minioClient.putObject(PutObjectArgs.builder().bucket(minioProperties.getBucket()).object(file.getName())
+                    .stream(fileInputStream, file.length(), -1).contentType(contentType).build());
+            String sha1 = objectWriteResponse.checksumSHA1();
+            log.info("file info {}", sha1);
+        } catch (Exception e) {
+            log.error("upload file fail，file size：{} bytes", file.length(), e);
+        }
+    }
+
+    /**
+     * 指定contentType类型和文件名的文件上传
+     *
+     * @param file        文件
+     * @param contentType 类型
+     * @param fileName    文件名
+     */
+    public void upload(File file, String contentType, String fileName) {
+        try (FileInputStream fileInputStream = new FileInputStream(file)) {
+            log.info("file local info {}", file);
+            ObjectWriteResponse objectWriteResponse = minioClient.putObject(PutObjectArgs.builder().bucket(minioProperties.getBucket()).object(fileName)
+                    .stream(fileInputStream, file.length(), -1).contentType(contentType).build());
+            String sha1 = objectWriteResponse.checksumSHA1();
+            log.info("file info {}", sha1);
         } catch (Exception e) {
             log.error("upload file fail，file size：{} bytes", file.length(), e);
         }
