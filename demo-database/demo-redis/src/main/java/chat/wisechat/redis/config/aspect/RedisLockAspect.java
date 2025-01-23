@@ -36,8 +36,8 @@ public class RedisLockAspect {
 
     private static final ConcurrentLinkedQueue<RedisLockDefinitionHolder> holders = new ConcurrentLinkedQueue<>();
 
-    private static final ScheduledExecutorService SCHEDULER = new ScheduledThreadPoolExecutor(1,
-            new BasicThreadFactory.Builder().namingPattern("redisLock-schedule-pool").daemon(true).build());
+    /*private static final ScheduledExecutorService SCHEDULER = new ScheduledThreadPoolExecutor(1,
+            new BasicThreadFactory.Builder().namingPattern("redisLock-schedule-pool").daemon(true).build());*/
 
     /**
      * 切点
@@ -102,7 +102,7 @@ public class RedisLockAspect {
         return result;
     }
 
-    {
+    /*{
         SCHEDULER.scheduleAtFixedRate(() -> {
             log.info("定时任务开始执行....");
             log.info("队列任务数：{}", holders.size());
@@ -139,6 +139,6 @@ public class RedisLockAspect {
 
             }
         }, 0, 2, TimeUnit.SECONDS);
-    }
+    }*/
 
 }
