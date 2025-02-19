@@ -8,4 +8,5 @@ import org.springframework.web.multipart.MultipartFile;
  */
 public interface FileService {
     String getSha1(MultipartFile file);
+    String getSha256(MultipartFile file);
 }

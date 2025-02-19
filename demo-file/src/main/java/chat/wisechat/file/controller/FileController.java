@@ -24,4 +24,9 @@ public class FileController {
     public String getSha1(@RequestParam("file") MultipartFile file) {
         return fileService.getSha1(file);
     }
+
+    @PostMapping("/getSha256")
+    public String getSha256(@RequestParam("file") MultipartFile file) {
+        return fileService.getSha256(file);
+    }
 }
