@@ -8,4 +8,7 @@ import java.util.concurrent.ExecutionException;
  */
 public interface ThreadService {
     void supplyAsync() throws ExecutionException, InterruptedException;
+
+    void runAsync();
+
 }

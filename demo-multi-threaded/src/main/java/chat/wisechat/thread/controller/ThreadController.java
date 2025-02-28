@@ -24,4 +24,10 @@ public class ThreadController {
         // 获取返回值的并发编程 在获取返回值时会阻塞线程
         threadService.supplyAsync();
     }
+
+    @GetMapping("/runAsync")
+    public void runAsync() {
+        // 无需返回值的并发编程
+        threadService.runAsync();
+    }
 }

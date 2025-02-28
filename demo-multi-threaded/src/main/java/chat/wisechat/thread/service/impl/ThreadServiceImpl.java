@@ -44,4 +44,24 @@ public class ThreadServiceImpl implements ThreadService {
         String medal = medalInfo.get();
         log.info("time = {} user = {} medal = {}", (System.currentTimeMillis() - timeMillis), user, medal);
     }
+
+    @Override
+    public void runAsync() {
+        long timeMillis = System.currentTimeMillis();
+        // runAsync 没有返回值，“get()或者join()时” 依然会阻塞线程
+        CompletableFuture<Void> userInfo = CompletableFuture.runAsync(() -> userService.getUserInfo(123), defaultThreadPool);
+
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        CompletableFuture<String> medalInfo = CompletableFuture.supplyAsync(() -> medalService.getMedalInfo(123), defaultThreadPool);
+        // 在join时会阻塞线程 用于无需处理异常的场景
+        Void join = userInfo.join();
+        log.info("------分界点------");
+        String medal = medalInfo.join();
+        log.info("time = {} user = {} medal = {}", (System.currentTimeMillis() - timeMillis), join, medal);
+    }
 }
