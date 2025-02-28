@@ -24,6 +24,8 @@
         <module>demo-log-traceId</module>
         <module>demo-file</module>
         <module>demo-database</module>
+        <module>demo-multi-threaded</module>
+
     </modules>
 
     <properties>
