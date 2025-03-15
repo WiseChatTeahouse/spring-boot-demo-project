@@ -31,23 +31,23 @@ public class MessageCenterProperties {
         /**
          * 表示与目标服务器建立 TCP 连接的最大等待时间（包含 TCP 握手 + SSL 握手时间） 单位：s
          */
-        private final int connectTimeout = 10;
+        private int connectTimeout = 10;
         /**
          * 表示从成功建立连接后，等待服务器返回响应数据的最大时间  单位：s
          */
-        private final int readTimeout = 5;
+        private int readTimeout = 5;
         /**
          * 示向服务器发送请求数据的最大时间(如上传文件)  单位：s
          */
-        private final int writeTimeout = 5;
+        private int writeTimeout = 5;
         /**
          * 连接池 最大空闲连接数  单位：s
          */
-        private final int connectionPool_keepAliveDuration = 10;
+        private int connectionPool_keepAliveDuration = 10;
         /**
          * 连接池 空闲连接的存活时间 默认十分钟  单位：s
          */
-        private final int connectionPool_maxIdleConnections = 600;
+        private int connectionPool_maxIdleConnections = 600;
     }
 
 }
