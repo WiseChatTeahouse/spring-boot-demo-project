@@ -1,5 +1,6 @@
 package chat.wisechat.message;
 
+import chat.wisechat.message.config.RetryInterceptor;
 import chat.wisechat.message.core.MessageTemplate;
 import chat.wisechat.message.core.OkHttpHelper;
 import lombok.extern.slf4j.Slf4j;
@@ -37,6 +38,7 @@ public class MessageCenterAutoConfiguration {
         builder.writeTimeout(messageCenterProperties.getOkHttpProperties().getWriteTimeout(), SECONDS);
         builder.connectionPool(new ConnectionPool(messageCenterProperties.getOkHttpProperties().getConnectionPool_maxIdleConnections(),
                 messageCenterProperties.getOkHttpProperties().getConnectionPool_keepAliveDuration(), SECONDS));
+        builder.addNetworkInterceptor(new RetryInterceptor());
         return builder.build();
     }
 
