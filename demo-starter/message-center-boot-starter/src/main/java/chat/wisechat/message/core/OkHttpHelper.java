@@ -3,13 +3,7 @@ package chat.wisechat.message.core;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
-
-import okhttp3.Headers;
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
+import okhttp3.*;
 import org.springframework.messaging.Message;
 
 import javax.annotation.Resource;
@@ -37,6 +31,10 @@ public class OkHttpHelper {
      */
     public String post(String url, Message<?> message) {
         log.debug("okHttpClient post url: {}, body: {}", url, message.getPayload());
+        Object path = message.getHeaders().get("path");
+        if (null != path) {
+            url = url.concat(path.toString());
+        }
         MediaType mediaTypeJson = MediaType.parse(MEDIA_TYPE_JSON);
         Headers.Builder builder = new Headers.Builder();
         Headers headers = builder.add("Content-Type", "application/json").build();
