@@ -25,7 +25,8 @@
         <module>demo-file</module>
         <module>demo-database</module>
         <module>demo-multi-threaded</module>
-
+        <module>demo-packaging</module>
+        <module>demo-spel</module>
     </modules>
 
     <properties>
