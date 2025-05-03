@@ -27,6 +27,7 @@
         <module>demo-multi-threaded</module>
         <module>demo-packaging</module>
         <module>demo-spel</module>
+        <module>demo-cloud-websocket</module>
     </modules>
 
     <properties>

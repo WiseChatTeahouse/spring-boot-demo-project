@@ -1,0 +1,29 @@
+server:
+  port: 7910
+
+eureka:
+  client:
+    # 注册到Eureka的注册中心
+    register-with-eureka: true
+    # 获取注册实例列表
+    fetch-registry: true
+    service-url:
+      # 配置注册中心地址
+      defaultZone: http://localhost:8761/eureka
+
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          lowerCaseServiceId: true
+          enabled: true
+      routes:
+        - id: socket-server
+          uri: lb:ws://socket-server
+          predicates:
+            - Path=/socket/websocket/**
+          filters:
+            - StripPrefix=1
