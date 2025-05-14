@@ -29,6 +29,7 @@
         <module>demo-spel</module>
         <module>demo-cloud-websocket</module>
         <module>demo-minio</module>
+        <module>demo-okhttp</module>
     </modules>
 
     <properties>
