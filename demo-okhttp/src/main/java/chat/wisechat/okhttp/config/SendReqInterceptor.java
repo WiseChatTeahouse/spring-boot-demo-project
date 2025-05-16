@@ -1,6 +1,5 @@
 package chat.wisechat.okhttp.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
 import okio.Buffer;
@@ -41,7 +40,7 @@ public class SendReqInterceptor implements Interceptor {
             if (responseBody != null) {
                 String result = responseBody.string();
                 log.info("Coupon resp info couponName:{} body:{}", couponName, result);
-                ResponseBody newResponseBody = ResponseBody.create(responseBody.contentType(), result);
+                ResponseBody newResponseBody = ResponseBody.create(result, MediaType.parse("application/json; charset=utf-8"));
                 return response.newBuilder().body(newResponseBody).build();
             }
         } catch (IOException e) {
