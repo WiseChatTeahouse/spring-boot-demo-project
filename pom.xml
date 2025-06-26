@@ -30,6 +30,7 @@
         <module>demo-cloud-websocket</module>
         <module>demo-minio</module>
         <module>demo-okhttp</module>
+        <module>demo-object-mapping</module>
     </modules>
 
     <properties>
